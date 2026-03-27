@@ -7,13 +7,12 @@
     <meta name="description" content="DMWSM — вселенная кода, кибер-котов и бесконечного swap. Проекты, утилиты и новости из мира Senior+.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐱</text></svg>">
     <style>
-        /* DMWSM Theme – Neon / Cyber Style */
+        /* стили такие же, как в предыдущем варианте — оставляем */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             background: #0a0f1a;
             color: #00ffcc;
@@ -23,8 +22,6 @@
             display: flex;
             flex-direction: column;
         }
-
-        /* Header */
         header {
             display: flex;
             align-items: center;
@@ -38,7 +35,6 @@
             top: 0;
             z-index: 100;
         }
-
         .logo {
             display: flex;
             align-items: center;
@@ -48,12 +44,10 @@
             text-decoration: none;
             color: #00ffcc;
             text-shadow: 0 0 5px #00ffcc;
-            letter-spacing: 1px;
         }
         .logo span {
             font-size: 2rem;
         }
-
         nav ul {
             display: flex;
             list-style: none;
@@ -70,15 +64,12 @@
             color: #00ffcc;
             text-shadow: 0 0 5px #00ffcc;
         }
-
         #burger {
             display: none;
             width: 32px;
             cursor: pointer;
             filter: invert(1);
         }
-
-        /* Main content */
         main {
             flex: 1;
             max-width: 1200px;
@@ -86,18 +77,15 @@
             padding: 2rem 1.5rem;
             width: 100%;
         }
-
         section {
             margin-bottom: 3rem;
         }
-
         h1 {
             font-size: 2.5rem;
             text-align: center;
             margin-bottom: 1rem;
             text-shadow: 0 0 8px #00ffcc;
         }
-
         .tagline {
             text-align: center;
             font-size: 1.2rem;
@@ -107,8 +95,6 @@
             margin: 1.5rem auto;
             max-width: 800px;
         }
-
-        /* Grid кнопок */
         .home-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -116,7 +102,6 @@
             margin: 40px auto;
             max-width: 900px;
         }
-
         .home-grid a {
             display: flex;
             align-items: center;
@@ -131,9 +116,7 @@
             font-size: 1.1rem;
             color: #fff;
             transition: all 0.25s ease;
-            backdrop-filter: blur(4px);
         }
-
         .home-grid a:hover {
             background: rgba(0, 255, 204, 0.1);
             border-color: #00ffcc;
@@ -141,8 +124,6 @@
             box-shadow: 0 5px 15px rgba(0, 255, 204, 0.2);
             color: #00ffcc;
         }
-
-        /* Видео-карточка */
         .video-card {
             background: rgba(20, 30, 45, 0.6);
             border: 1px solid rgba(0, 255, 204, 0.3);
@@ -150,25 +131,19 @@
             padding: 24px;
             margin: 30px auto;
             max-width: 800px;
-            backdrop-filter: blur(8px);
         }
-
         .video-card h2 {
             text-align: center;
             margin-bottom: 20px;
             font-size: 1.6rem;
         }
-
         .video-wrapper {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            border: 1px solid rgba(0,255,204,0.3);
         }
-
         .video-wrapper iframe {
             position: absolute;
             top: 0;
@@ -176,8 +151,6 @@
             width: 100%;
             height: 100%;
         }
-
-        /* Футер */
         footer {
             text-align: center;
             padding: 25px 20px;
@@ -185,17 +158,11 @@
             margin-top: 2rem;
             background: rgba(10, 15, 26, 0.9);
         }
-
         .footer-socials {
             display: flex;
             justify-content: center;
             gap: 25px;
             margin-bottom: 20px;
-        }
-
-        .social-link {
-            display: inline-block;
-            transition: 0.2s;
         }
         .social-link img {
             width: 32px;
@@ -208,13 +175,10 @@
             opacity: 1;
             filter: brightness(1) invert(1) drop-shadow(0 0 4px #00ffcc);
         }
-
         footer p {
             font-size: 0.8rem;
             color: #88aaff;
         }
-
-        /* Адаптив */
         @media (max-width: 768px) {
             header {
                 padding: 15px 20px;
@@ -229,7 +193,6 @@
                 font-size: 2rem;
             }
         }
-
         @media (max-width: 600px) {
             nav ul {
                 display: none;
@@ -254,8 +217,6 @@
                 color: #00ffcc;
             }
         }
-
-        /* Кибер-кот внизу */
         .cyber-cat {
             text-align: center;
             margin: 20px 0 0;
@@ -274,9 +235,9 @@
     <nav>
         <ul>
             <li><a href="#projects">Проекты</a></li>
-            <li><a href="#tools">Утилиты</a></li>
             <li><a href="#media">Медиа</a></li>
-            <li><a href="https://boosty.to/your_boosty" target="_blank">Поддержать</a></li>
+            <li><a href="https://github.com/maksimka1855" target="_blank">GitHub</a></li>
+            <li><a href="https://www.youtube.com/@максимка_2018" target="_blank">YouTube</a></li>
         </ul>
     </nav>
     <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z'/%3E%3C/svg%3E" alt="Меню" id="burger">
@@ -291,7 +252,6 @@
         </div>
     </section>
 
-    <!-- Блок кнопок-проектов -->
     <section id="projects">
         <div class="home-grid">
             <a href="https://github.com/maksimka1855/mks-os-1.3" target="_blank" rel="noopener">
@@ -301,27 +261,20 @@
                 🌿 matrix fork (green-dir.bat)
             </a>
             <a href="https://github.com/maksimka1855" target="_blank" rel="noopener">
-                📦 GitHub — все проекты
+                📦 Все проекты на GitHub
             </a>
             <a href="https://www.youtube.com/@максимка_2018" target="_blank" rel="noopener">
                 ▶️ YouTube-канал
             </a>
-            <a href="https://t.me/+YOUR_CHANNEL" target="_blank" rel="noopener">
-                💬 Telegram канал
-            </a>
-            <a href="https://boosty.to/YOUR_BOOSTY" target="_blank" rel="noopener">
-                🎁 Поддержать проект
-            </a>
         </div>
     </section>
 
-    <!-- Видео (последнее актуальное) -->
     <section id="media">
         <div class="video-card">
-            <h2>🎬 Свежее видео на канале</h2>
+            <h2>🎬 Последнее видео</h2>
             <div class="video-wrapper">
-                <!-- Замените ID видео на свой последний ролик -->
-                <iframe src="https://www.youtube.com/embed/?list=UULFsS9QFVkkxhF0zYwf1QP2ZA" 
+                <!-- вставь ID последнего видео вместо videoseries?list=... -->
+                <iframe src="https://www.youtube.com/embed/videoseries?list=UULFsS9QFVkkxhF0zYwf1QP2ZA" 
                         title="Последнее видео DMWSM" frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                         allowfullscreen>
@@ -330,7 +283,6 @@
         </div>
     </section>
 
-    <!-- ASCII-кот (приятная мелочь) -->
     <div class="cyber-cat">
         /\_/\<br>
         ( o.o )<br>
@@ -347,14 +299,10 @@
         <a href="https://www.youtube.com/@максимка_2018" class="social-link" target="_blank" rel="noopener">
             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.066 0 12 0 12s0 3.934.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.934 24 12 24 12s0-3.934-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z'/%3E%3C/svg%3E" alt="YouTube">
         </a>
-        <a href="https://t.me/+YOUR_CHANNEL" class="social-link" target="_blank" rel="noopener">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.6-1.38-.97-2.23-1.56-.99-.67-.35-1.04.22-1.64.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.07-.2-.05-.29-.03-.13.03-2.2 1.4-6.22 4.11-.59.4-1.12.6-1.6.59-.52-.01-1.53-.3-2.28-.54-.92-.3-1.65-.47-1.59-1 .03-.28.44-.57 1.17-.88 4.57-1.99 7.62-3.3 9.15-3.94 4.35-1.81 5.26-2.12 5.85-2.13.13 0 .42.03.61.19.16.13.2.31.22.47.02.16.01.31 0 .48z'/%3E%3C/svg%3E" alt="Telegram">
-        </a>
     </div>
     <p>© 2026 DMWSM — вселенная кода. Проекты Senior+ под защитой кибер-котов.<br>Бесконечный swap, лимоны и никакого No Bootable Device.</p>
 </footer>
 
-<!-- Простой скрипт для мобильного меню -->
 <script>
     const burger = document.getElementById('burger');
     const nav = document.querySelector('nav ul');
