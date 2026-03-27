@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMWSM | Максимка</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0f1a;
+            color: #00ffcc;
+            font-family: 'Courier New', 'Fira Code', monospace;
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            text-shadow: 0 0 15px #00ffcc;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-bottom: 2rem;
+        }
+
+        .cat {
+            font-size: 3rem;
+            white-space: pre;
+            margin: 2rem 0;
+            filter: drop-shadow(0 0 5px #00ffcc);
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(0,255,204,0.1);
+            border: 1px solid #00ffcc;
+            border-radius: 50px;
+            padding: 0.5rem 1.2rem;
+            margin: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .card {
+            background: rgba(0,255,204,0.05);
+            border: 1px solid #00ffcc;
+            border-radius: 12px;
+            padding: 1.5rem;
+            width: 260px;
+            transition: 0.2s;
+            backdrop-filter: blur(4px);
+        }
+
+        .card:hover {
+            background: rgba(0,255,204,0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0,255,204,0.2);
+        }
+
+        .card h3 {
+            margin-bottom: 0.8rem;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        .card a {
+            color: #00ffcc;
+            text-decoration: none;
+            border-bottom: 1px dashed;
+        }
+
+        .footer {
+            margin-top: 3rem;
+            border-top: 1px solid rgba(0,255,204,0.3);
+            padding-top: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 700px) {
+            body { padding: 1rem; }
+            h1 { font-size: 2rem; }
+            .projects { flex-direction: column; align-items: center; }
+            .card { width: 90%; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>DMWSM</h1>
+    <div class="tagline">Командир Максимка | Senior+ | Кибер-коты и лисобаки</div>
+
+    <div class="cat">
+        /\_/\<br>
+        ( o.o )<br>
+        > ^ <<br>
+    </div>
+
+    <div>
+        <span class="badge">🐧 EndeavourOS</span>
+        <span class="badge">🍋 Swap 32 ГБ</span>
+        <span class="badge">🐍 Python / C / C#</span>
+        <span class="badge">💾 Gentoo survivor</span>
+    </div>
+
+    <div class="projects">
+        <div class="card">
+            <h3>mks-os</h3>
+            <p>Собственная операционная система на Python/C#. Версии 1.0–1.4.</p>
+            <a href="https://github.com/maksimka1855/mks-os-1.3">GitHub →</a>
+        </div>
+        <div class="card">
+            <h3>Matrix Fork</h3>
+            <p>Зелёный dir /s и другие улучшения для старого доброго терминала.</p>
+            <a href="https://github.com/maksimka1855/matrix">GitHub →</a>
+        </div>
+        <div class="card">
+            <h3>Compshop</h3>
+            <p>Игра про компьютерный магазин с QEMU и выбором BIOS/UEFI.</p>
+            <a href="https://github.com/maksimka1855">Проект</a>
+        </div>
+        <div class="card">
+            <h3>Windhawk Mod</h3>
+            <p>Приветствие при запуске Windows с поддержкой рус/англ.</p>
+            <a href="https://github.com/maksimka1855/windhawk-mods">GitHub →</a>
+        </div>
+    </div>
+
+    <div class="badge" style="margin-top: 0;">📺 YouTube: @максимка_2018</div>
+    <div class="badge">🎵 Wicsur — официальный саунд-продюсер</div>
+    <div class="badge">🔒 Пароль BIOS: 1234 (брутфорс 36 лет)</div>
+
+    <div class="footer">
+        <p>🌍 Мир DMWSM: кибер-коты, овчарка, медведь, лисобаки.<br>
+        «Солнца уже не будет — теперь я свечу»<br>
+        © 2026 Максимка / Командир DMWSM</p>
+    </div>
+</div>
+</body>
+</html>
