@@ -2,87 +2,369 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DMWSM — вселенная кода</title>
+    <meta name="description" content="DMWSM — вселенная кода, кибер-котов и бесконечного swap. Проекты, утилиты и новости из мира Senior+.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐱</text></svg>">
     <style>
-        /* стили те же, что в предыдущем варианте, можно оставить */
+        /* DMWSM Theme – Neon / Cyber Style */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             background: #0a0f1a;
             color: #00ffcc;
-            font-family: 'Courier New', monospace;
-            text-align: center;
-            padding: 2rem;
+            font-family: 'Courier New', 'Fira Code', monospace;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
-        .container {
-            max-width: 900px;
+
+        /* Header */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 20px 30px;
+            border-bottom: 1px solid rgba(0, 255, 204, 0.3);
+            background: rgba(10, 15, 26, 0.8);
+            backdrop-filter: blur(6px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: #00ffcc;
+            text-shadow: 0 0 5px #00ffcc;
+            letter-spacing: 1px;
+        }
+        .logo span {
+            font-size: 2rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        nav a {
+            color: #88aaff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
+            font-size: 1.1rem;
+        }
+        nav a:hover {
+            color: #00ffcc;
+            text-shadow: 0 0 5px #00ffcc;
+        }
+
+        #burger {
+            display: none;
+            width: 32px;
+            cursor: pointer;
+            filter: invert(1);
+        }
+
+        /* Main content */
+        main {
+            flex: 1;
+            max-width: 1200px;
             margin: 0 auto;
-            background: rgba(10, 15, 26, 0.9);
-            border-radius: 30px;
-            padding: 2rem;
-            border: 1px solid #00ffcc;
+            padding: 2rem 1.5rem;
+            width: 100%;
         }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
         h1 {
-            font-size: 3rem;
-            text-shadow: 0 0 10px #00ffcc;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 8px #00ffcc;
         }
-        .cat {
-            font-family: monospace;
-            white-space: pre;
+
+        .tagline {
+            text-align: center;
             font-size: 1.2rem;
-            margin: 1rem;
+            border-top: 1px dashed #00ffcc;
+            border-bottom: 1px dashed #00ffcc;
+            padding: 0.8rem;
+            margin: 1.5rem auto;
+            max-width: 800px;
         }
-        .projects {
+
+        /* Grid кнопок */
+        .home-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 40px auto;
+            max-width: 900px;
+        }
+
+        .home-grid a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            text-decoration: none;
+            background: rgba(20, 30, 45, 0.7);
+            border: 1px solid rgba(0, 255, 204, 0.4);
+            padding: 14px 20px;
+            border-radius: 16px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #fff;
+            transition: all 0.25s ease;
+            backdrop-filter: blur(4px);
+        }
+
+        .home-grid a:hover {
+            background: rgba(0, 255, 204, 0.1);
+            border-color: #00ffcc;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 255, 204, 0.2);
+            color: #00ffcc;
+        }
+
+        /* Видео-карточка */
+        .video-card {
+            background: rgba(20, 30, 45, 0.6);
+            border: 1px solid rgba(0, 255, 204, 0.3);
+            border-radius: 24px;
+            padding: 24px;
+            margin: 30px auto;
+            max-width: 800px;
+            backdrop-filter: blur(8px);
+        }
+
+        .video-card h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            border: 1px solid rgba(0,255,204,0.3);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Футер */
+        footer {
+            text-align: center;
+            padding: 25px 20px;
+            border-top: 1px solid rgba(0, 255, 204, 0.2);
+            margin-top: 2rem;
+            background: rgba(10, 15, 26, 0.9);
+        }
+
+        .footer-socials {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            margin: 2rem 0;
+            gap: 25px;
+            margin-bottom: 20px;
         }
-        .card {
-            background: #0f1420;
-            border: 1px solid #00ffcc;
-            border-radius: 15px;
-            padding: 1rem;
-            width: 200px;
+
+        .social-link {
+            display: inline-block;
+            transition: 0.2s;
         }
-        .card a {
-            color: #00ffcc;
-            text-decoration: none;
-            font-weight: bold;
+        .social-link img {
+            width: 32px;
+            height: 32px;
+            filter: brightness(0.8) invert(1);
+            opacity: 0.7;
+            transition: 0.2s;
         }
-        .footer {
-            margin-top: 2rem;
+        .social-link:hover img {
+            opacity: 1;
+            filter: brightness(1) invert(1) drop-shadow(0 0 4px #00ffcc);
+        }
+
+        footer p {
             font-size: 0.8rem;
-            border-top: 1px dashed #00ffcc;
-            padding-top: 1rem;
+            color: #88aaff;
+        }
+
+        /* Адаптив */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+            nav ul {
+                gap: 1.2rem;
+            }
+            .home-grid {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav ul {
+                display: none;
+            }
+            #burger {
+                display: block;
+            }
+            .mobile-menu {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                right: 20px;
+                background: #0f1420;
+                border: 1px solid #00ffcc;
+                border-radius: 16px;
+                padding: 1rem;
+                gap: 0.8rem;
+                z-index: 200;
+            }
+            .mobile-menu a {
+                color: #00ffcc;
+            }
+        }
+
+        /* Кибер-кот внизу */
+        .cyber-cat {
+            text-align: center;
+            margin: 20px 0 0;
+            font-size: 1rem;
+            white-space: pre;
+            line-height: 1.3;
+            color: #ffaa44;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>DMWSM</h1>
-        <div class="cat">
-            /\_/\<br>
-            ( o.o )<br>
-            > ^ <<br>
+<header>
+    <a href="#" class="logo">
+        <span>🐱‍💻</span> DMWSM
+    </a>
+    <nav>
+        <ul>
+            <li><a href="#projects">Проекты</a></li>
+            <li><a href="#tools">Утилиты</a></li>
+            <li><a href="#media">Медиа</a></li>
+            <li><a href="https://boosty.to/your_boosty" target="_blank">Поддержать</a></li>
+        </ul>
+    </nav>
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z'/%3E%3C/svg%3E" alt="Меню" id="burger">
+</header>
+
+<main>
+    <section>
+        <h1>⚡ DMWSM — вселенная кода ⚡</h1>
+        <div class="tagline">
+            🧠 Senior+ • 🐧 Linux • 🍋 Лимоны • 🔥 Бесконечный swap<br>
+            No Bootable Device — не приговор, а ритуал посвящения
         </div>
-        <p>Кибер-коты приветствуют тебя, путник. Добро пожаловать во вселенную кода.</p>
-        <div class="projects">
-            <div class="card">
-                <a href="https://github.com/maksimka1855/mks-os-1.3">mks‑os</a>
-                <p>Операционная система из мира DMWSM</p>
-            </div>
-            <div class="card">
-                <a href="https://github.com/maksimka1855/matrix">matrix</a>
-                <p>Секретный форк с зелёным dir</p>
-            </div>
-            <div class="card">
-                <a href="https://github.com/maksimka1855">Архив проектов</a>
-                <p>Исходные коды и артефакты</p>
+    </section>
+
+    <!-- Блок кнопок-проектов -->
+    <section id="projects">
+        <div class="home-grid">
+            <a href="https://github.com/maksimka1855/mks-os-1.3" target="_blank" rel="noopener">
+                🐢 mks‑os — своя ОС
+            </a>
+            <a href="https://github.com/maksimka1855/matrix" target="_blank" rel="noopener">
+                🌿 matrix fork (green-dir.bat)
+            </a>
+            <a href="https://github.com/maksimka1855" target="_blank" rel="noopener">
+                📦 GitHub — все проекты
+            </a>
+            <a href="https://www.youtube.com/@максимка_2018" target="_blank" rel="noopener">
+                ▶️ YouTube-канал
+            </a>
+            <a href="https://t.me/+YOUR_CHANNEL" target="_blank" rel="noopener">
+                💬 Telegram канал
+            </a>
+            <a href="https://boosty.to/YOUR_BOOSTY" target="_blank" rel="noopener">
+                🎁 Поддержать проект
+            </a>
+        </div>
+    </section>
+
+    <!-- Видео (последнее актуальное) -->
+    <section id="media">
+        <div class="video-card">
+            <h2>🎬 Свежее видео на канале</h2>
+            <div class="video-wrapper">
+                <!-- Замените ID видео на свой последний ролик -->
+                <iframe src="https://www.youtube.com/embed/?list=UULFsS9QFVkkxhF0zYwf1QP2ZA" 
+                        title="Последнее видео DMWSM" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                </iframe>
             </div>
         </div>
-        <div class="footer">
-            🔫🍋🐱🐕‍🦺 <strong>DMWSM — сила</strong> · бесконечный swap · No Bootable Device — не приговор
-        </div>
+    </section>
+
+    <!-- ASCII-кот (приятная мелочь) -->
+    <div class="cyber-cat">
+        /\_/\<br>
+        ( o.o )<br>
+        > ^ <<br>
+        <span style="font-size:0.8rem;">кибер-кот на страже лимонов</span>
     </div>
+</main>
+
+<footer>
+    <div class="footer-socials">
+        <a href="https://github.com/maksimka1855" class="social-link" target="_blank" rel="noopener">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.545 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57C20.565 21.795 24 17.31 24 12c0-6.63-5.37-12-12-12z'/%3E%3C/svg%3E" alt="GitHub">
+        </a>
+        <a href="https://www.youtube.com/@максимка_2018" class="social-link" target="_blank" rel="noopener">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.066 0 12 0 12s0 3.934.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.934 24 12 24 12s0-3.934-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z'/%3E%3C/svg%3E" alt="YouTube">
+        </a>
+        <a href="https://t.me/+YOUR_CHANNEL" class="social-link" target="_blank" rel="noopener">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.6-1.38-.97-2.23-1.56-.99-.67-.35-1.04.22-1.64.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.07-.2-.05-.29-.03-.13.03-2.2 1.4-6.22 4.11-.59.4-1.12.6-1.6.59-.52-.01-1.53-.3-2.28-.54-.92-.3-1.65-.47-1.59-1 .03-.28.44-.57 1.17-.88 4.57-1.99 7.62-3.3 9.15-3.94 4.35-1.81 5.26-2.12 5.85-2.13.13 0 .42.03.61.19.16.13.2.31.22.47.02.16.01.31 0 .48z'/%3E%3C/svg%3E" alt="Telegram">
+        </a>
+    </div>
+    <p>© 2026 DMWSM — вселенная кода. Проекты Senior+ под защитой кибер-котов.<br>Бесконечный swap, лимоны и никакого No Bootable Device.</p>
+</footer>
+
+<!-- Простой скрипт для мобильного меню -->
+<script>
+    const burger = document.getElementById('burger');
+    const nav = document.querySelector('nav ul');
+    burger.addEventListener('click', () => {
+        if (nav.classList.contains('mobile-menu')) {
+            nav.classList.remove('mobile-menu');
+        } else {
+            nav.classList.add('mobile-menu');
+        }
+    });
+</script>
 </body>
 </html>
